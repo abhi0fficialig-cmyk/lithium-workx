@@ -372,3 +372,48 @@ h1, h2, h3, h4, h5, h6 { color: var(--lw-ink); }
 @keyframes tp2-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 767px) { .tp2__item { padding: 0 1.9rem; } .tp2__item img { max-height: 42px; } .tp2__track { animation-duration: 20s; } }
 @media (prefers-reduced-motion: reduce) { .tp2__track { animation: none; } }
+
+/* ---------- testimonial cards (homepage + about) ----------
+   Plain card layout: avatar, name, location, then the quote.
+   Defined here (loaded on every page) so both pages share one design. */
+.testimonials-slide { display: flex; padding: 24px 12px 14px; box-sizing: border-box; }
+.tcard {
+    display: flex; flex-direction: column; width: 100%;
+    background: #fff;
+    border: 1.5px solid var(--lw-line);
+    border-radius: 16px;
+    padding: 26px 24px 28px;
+    box-shadow: 0 10px 30px -18px rgba(20, 27, 38, .28);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.tcard:hover {
+    transform: translateY(-4px);
+    border-color: var(--lw-blue);
+    box-shadow: 0 24px 46px -24px rgba(20, 27, 38, .32);
+}
+.tcard__head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.tcard__avatar {
+    width: 58px !important; height: 58px !important;
+    border-radius: 50% !important;
+    object-fit: cover; flex-shrink: 0; display: block;
+    border: 2px solid var(--lw-line);
+}
+.tcard__id { min-width: 0; }
+.tcard__name {
+    font-size: 1.02rem; font-weight: 800; color: var(--lw-ink);
+    margin: 0 0 3px; line-height: 1.25;
+}
+.tcard__loc {
+    display: flex; align-items: center; gap: 6px;
+    font-size: .82rem; font-weight: 600; color: var(--lw-blue);
+}
+.tcard__loc i { font-size: .78rem; }
+.tcard__text {
+    margin: 0; font-size: .93rem; line-height: 1.7; color: var(--lw-body);
+    padding-top: 16px; border-top: 1px solid var(--lw-line);
+    flex-grow: 1;
+}
+@media (max-width: 575px) {
+    .tcard { padding: 22px 20px 24px; }
+    .tcard__avatar { width: 50px !important; height: 50px !important; }
+}
