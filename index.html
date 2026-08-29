@@ -681,18 +681,41 @@
                 .faq-style-1 .col-lg-6:has(> .faq-img) { display: none !important; }
             }
 
-            /* ===== FAQ: stop overlapping the Mission banner above =====
-               The template pulled this section up by -245px, so the accordion
-               card and the video sat on top of the section above it. Sit the
-               section in its own space instead and give it its own background. */
+            /* ===== FAQ: overlap the Mission banner by ~30% =====
+               The card + video are pulled up so roughly the top third of the
+               block sits over the Mission section. The section itself stays
+               transparent; ::before paints the page colour only BELOW the
+               overlap, so the dark banner still shows through behind the top. */
             .faq-style-1 {
-                margin-top: 0 !important;
-                padding: 84px 0 !important;
-                background-color: var(--sec-c) !important;
-                z-index: 1 !important;
+                --faq-overlap: 190px;
+                margin-top: calc(var(--faq-overlap) * -1) !important;
+                padding: 0 0 84px !important;
+                background-color: transparent !important;
+                position: relative;
+                z-index: 2 !important;
             }
-            .faq-style-1::before { display: none !important; }   /* old gap filler no longer needed */
-            .exrta-section { padding-bottom: 90px !important; }  /* room reserved for the overlap */
+            .faq-style-1::before {
+                content: "" !important;
+                display: block !important;
+                position: absolute !important;
+                left: 0; right: 0; bottom: 0;
+                height: calc(100% - var(--faq-overlap)) !important;
+                background: var(--sec-c) !important;
+                z-index: 0;
+                pointer-events: none;
+            }
+            .faq-style-1 .container { position: relative; z-index: 1; }
+            /* headroom in the Mission section so its heading is never covered */
+            .exrta-section { padding-bottom: 230px !important; }
+
+            @media (max-width: 991px) {
+                .faq-style-1 { --faq-overlap: 250px; }
+                .exrta-section { padding-bottom: 290px !important; }
+            }
+            @media (max-width: 767px) {
+                .faq-style-1 { --faq-overlap: 230px; }
+                .exrta-section { padding-bottom: 270px !important; }
+            }
 
             /* ===== FAQ: bold outlines on the accordion card and the video ===== */
             .faq-style-1 .faq-content {
