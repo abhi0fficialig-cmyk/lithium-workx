@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Lithiumworkx</title>
+<meta name="description" content="Learn about Lithiumworkx — our mission, vision, trusted partners and what our clients say about our circular battery technology solutions.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   0. TOKENS / RESET
+   ============================================================ */
+:root{
+  --navy:        #002D72;
+  --navy-deep:   #001A45;
+  --blue:        #1E88E5;
+  --blue-soft:   #5EA8ED;
+  --gold:        #F9A825;
+  --gold-deep:   #C97F00;
+  --ivory:       #FFF8E1;
+  --white:       #FFFFFF;
+  --ink:         #101826;
+  --ink-soft:    #4B5568;
+  --line:        rgba(0,45,114,0.14);
+  --line-soft:   rgba(0,45,114,0.08);
+  --shadow-sm:   0 2px 10px rgba(0,26,69,0.08);
+  --shadow-md:   0 12px 32px rgba(0,26,69,0.14);
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --container:   1200px;
+  --header-h:    84px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top: var(--header-h);
+}
+body{
+  margin:0;
+  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+h1,h2,h3,h4,p{ margin:0; }
+
+.container{
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:24px;
+}
+
+h1,h2,h3,h4{
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  color:var(--navy);
+}
+h1{ font-size:clamp(2.3rem, 4.6vw, 3.9rem); }
+h2{ font-size:clamp(1.85rem, 3.1vw, 2.65rem); }
+h3{ font-size:clamp(1.2rem, 1.8vw, 1.45rem); }
+
+p{ color:var(--ink-soft); }
+
+.section{ padding-block:104px; border-bottom:3px solid var(--gold); }
+@media (max-width:900px){ .section{ padding-block:72px; } }
+@media (max-width:560px){ .section{ padding-block:56px; } }
+
+.section-head{ max-width:640px; margin-bottom:52px; }
+.section-head p{ margin-top:14px; }
+.section-head.center{ margin-inline:auto; text-align:center; }
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--blue);
+  font-weight:700;
+  font-size:0.95rem;
+  margin-bottom:14px;
+}
+.kicker::before{
+  content:"";
+  width:8px;height:8px;
+  background:var(--gold);
+  border-radius:1px;
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:15px 30px;
+  font-weight:700;
+  font-size:0.95rem;
+  border-radius:var(--radius-sm);
+  border:2px solid transparent;
+  transition:transform .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+  white-space:nowrap;
+}
+.btn-primary{ background:var(--blue); color:var(--white); }
+.btn-primary:hover{ background:var(--navy); transform:translateY(-2px); }
+.btn-block{ width:100%; justify-content:center; }
+
+/* ============================================================
+   1. HEADER
+   ============================================================ */
+.site-header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  height:var(--header-h);
+  display:flex; align-items:center;
+  background:var(--navy);
+  color:var(--white);
+  box-shadow:0 2px 16px rgba(0,0,0,0.2);
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+.header-inner{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; font-size:1.25rem; letter-spacing:-0.01em;
+  color:inherit;
+  flex-shrink:0;
+}
+.logo img{
+  height:30px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+@media (max-width:980px){ .logo img{ height:26px; } }
+@media (max-width:560px){ .logo img{ height:24px; } }
+
+.main-nav{ display:flex; align-items:center; gap:2px; }
+.main-nav a{
+  padding:10px 16px;
+  font-weight:600;
+  font-size:0.95rem;
+  color:inherit;
+  border-radius:var(--radius-sm);
+  transition:opacity .18s ease;
+  opacity:0.88;
+}
+.main-nav a:hover{ opacity:1; }
+.main-nav a.is-current{ opacity:1; border-bottom:2px solid var(--gold); }
+
+.nav-toggle{
+  display:none;
+  background:none; border:0; padding:8px;
+  color:inherit;
+}
+.nav-toggle svg{ display:block; }
+
+@media (max-width:980px){
+  .main-nav{ display:none; }
+  .nav-toggle{ display:block; }
+}
+
+.mobile-drawer{
+  position:fixed; inset:0; z-index:99;
+  background:var(--navy);
+  display:flex; flex-direction:column;
+  padding:110px 32px 40px;
+  transform:translateY(-8px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.mobile-drawer.is-open{ opacity:1; transform:translateY(0); visibility:visible; }
+.mobile-drawer a{
+  color:var(--white);
+  font-size:1.5rem;
+  font-weight:700;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+.mobile-drawer .btn{ margin-top:28px; }
+
+/* ============================================================
+   2. PAGE HERO
+   ============================================================ */
+.page-hero{
+  position:relative;
+  min-height:340px;
+  padding-block:calc(var(--header-h) + 56px) 64px;
+  background:var(--navy-deep);
+  color:var(--white);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.page-hero-bg{
+  position:absolute; inset:0;
+  background-size:cover;
+  background-position:center 30%;
+  opacity:0.22;
+}
+.page-hero-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,26,69,0.6) 0%, rgba(0,10,30,0.85) 100%);
+}
+.page-hero .container{ position:relative; z-index:1; }
+.page-hero h1{ color:var(--white); margin-bottom:16px; }
+.page-hero .kicker{ color:var(--gold); }
+.page-hero .kicker::before{ background:var(--white); }
+.page-hero p{
+  color:rgba(255,255,255,0.78);
+  font-size:1.1rem;
+  max-width:620px;
+  margin-inline:auto;
+  line-height:1.7;
+}
+@media (max-width:600px){
+  .page-hero{ min-height:260px; }
+}
+
+/* ============================================================
+   3. ABOUT
+   ============================================================ */
+#about{ background:#EAF2FF; }
+.about-grid{
+  display:grid;
+  grid-template-columns:0.95fr 1fr;
+  gap:72px;
+  align-items:center;
+}
+.about-media{
+  position:relative;
+  isolation:isolate;
+  margin:0 16px 16px 0;
+}
+.about-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:var(--navy);
+  border-radius:32px 32px 32px 72px;
+  transform:translate(10px, 10px);
+  z-index:0;
+}
+.about-media img{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  aspect-ratio:4/3.05;
+  object-fit:cover;
+  border-radius:32px 32px 32px 72px;
+}
+.about-copy p + p{ margin-top:16px; }
+
+@media (max-width:900px){
+  .about-grid{ grid-template-columns:1fr; gap:48px; }
+  .about-media{ margin-right:10px; margin-bottom:10px; }
+  .about-media::after{ transform:translate(8px, 8px); border-radius:24px 24px 24px 56px; }
+  .about-media img{ border-radius:24px 24px 24px 56px; }
+}
+
+/* ============================================================
+   4. MISSION & VISION
+   ============================================================ */
+.mv-section{ background:var(--ivory); }
+.mv-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+.mv-card{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  padding:44px 38px;
+  border:2px solid var(--line);
+}
+.mv-card.mission{ border-color:var(--blue); }
+.mv-card.vision{ border-color:#A8DAB8; background:#E6F7ED; }
+.mv-card.vision h3{ color:var(--navy); }
+.mv-card.vision p{ color:var(--ink-soft); }
+
+.mv-icon{
+  width:56px; height:56px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:var(--radius-sm);
+  margin-bottom:24px;
+}
+.mv-card.mission .mv-icon{ background:rgba(30,136,229,0.1); color:var(--blue); }
+.mv-card.vision .mv-icon{ background:rgba(34,139,74,0.14); color:#1A7A3A; }
+.mv-card h3{ margin-bottom:14px; }
+
+@media (max-width:760px){
+  .mv-grid{ grid-template-columns:1fr; }
+}
+
+/* ============================================================
+   5. TRUSTED PARTNERS
+   ============================================================ */
+.partners-section{ background:#E6F7ED; }
+.partners-track{ padding-block:8px; overflow:hidden; }
+.marquee-track{
+  display:flex;
+  width:max-content;
+}
+.marquee-track.dir-left{ animation:marquee-left 32s linear infinite; }
+.marquee-group{ display:flex; align-items:center; gap:56px; flex-shrink:0; }
+.partner-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:22px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.partner-card img{ height:34px; width:auto; opacity:0.85; }
+
+@keyframes marquee-left{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* ============================================================
+   6. TESTIMONIALS
+   ============================================================ */
+.testimonials-section{
+  background:var(--ivory);
+  color:var(--ink);
+  padding-block:104px;
+  overflow:hidden;
+}
+.testimonials-section .section-head h2{ color:var(--navy); }
+.testimonials-section .section-head p{ color:var(--ink-soft); }
+.testimonials-section .kicker{ color:var(--blue); }
+.testimonials-section .kicker::before{ background:var(--gold); }
+
+.testimonial-track{
+  display:flex;
+  width:max-content;
+  animation:testimonial-scroll 40s linear infinite;
+  gap:28px;
+  padding-block:8px;
+}
+.testimonial-track:hover{ animation-play-state:paused; }
+
+.testimonial-card{
+  flex-shrink:0;
+  width:380px;
+  padding:36px 32px;
+  border:1.5px solid var(--line);
+  border-radius:var(--radius-md);
+  background:var(--white);
+  box-shadow:var(--shadow-sm);
+  transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.testimonial-card:hover{
+  border-color:var(--blue);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+}
+
+.testimonial-stars{
+  display:flex;
+  gap:3px;
+  margin-bottom:18px;
+  color:var(--gold);
+}
+
+.testimonial-quote{
+  font-size:0.96rem;
+  line-height:1.75;
+  color:var(--ink-soft);
+  margin-bottom:24px;
+  font-style:italic;
+}
+
+.testimonial-author{
+  font-weight:700;
+  font-size:0.95rem;
+  color:var(--navy);
+  margin-bottom:2px;
+}
+.testimonial-role{
+  font-size:0.84rem;
+  color:var(--ink-soft);
+}
+
+@keyframes testimonial-scroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+@media (max-width:600px){
+  .testimonial-card{ width:300px; padding:28px 24px; }
+  .testimonials-section{ padding-block:56px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .marquee-track, .testimonial-track{
+    animation:none !important;
+  }
+}
+
+/* ============================================================
+   7. FOOTER
+   ============================================================ */
+.site-footer{ background:#0A1931; color:rgba(255,255,255,0.72); }
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:48px;
+  padding-block:72px;
+}
+.footer-brand .logo{ color:var(--white); margin-bottom:18px; }
+.footer-brand p{ color:rgba(255,255,255,0.62); font-size:0.92rem; max-width:32ch; }
+.footer-social{ display:flex; gap:10px; margin-top:24px; }
+.footer-social a{
+  width:34px; height:34px;
+  display:flex; align-items:center; justify-content:center;
+  border:1.5px solid rgba(255,255,255,0.25);
+  border-radius:50%;
+  color:var(--white);
+  transition:background .18s ease, border-color .18s ease;
+}
+.footer-social a:hover{ background:var(--blue); border-color:var(--blue); }
+
+.footer-col h4{ color:var(--white); font-size:0.95rem; margin-bottom:20px; }
+.footer-col ul{ display:flex; flex-direction:column; gap:12px; }
+.footer-col a{ font-size:0.92rem; color:rgba(255,255,255,0.68); transition:color .18s ease; }
+.footer-col a:hover{ color:var(--white); }
+.footer-col address{ font-style:normal; font-size:0.92rem; color:rgba(255,255,255,0.68); line-height:1.7; }
+
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-block:24px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  font-size:0.85rem;
+}
+.footer-bottom-links{ display:flex; gap:20px; }
+.footer-bottom-links a{ color:rgba(255,255,255,0.5); }
+.footer-bottom-links a:hover{ color:var(--white); }
+
+@media (max-width:960px){
+  .footer-top{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px){
+  .footer-top{ grid-template-columns:1fr; padding-block:56px 32px; gap:36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Lithiumworkx home">
+      <img src="logo.png" alt="Lithiumworkx">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="is-current" aria-current="page">About</a>
+      <a href="products.html">Products and Solutions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <path d="M3 7H23" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M3 13H23" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M3 19H23" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="is-current" aria-current="page">About</a>
+  <a href="products.html">Products and Solutions</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('about%20image.png');" aria-hidden="true"></div>
+  <div class="container">
+    <span class="kicker">Who we are</span>
+    <h1>About Lithiumworkx</h1>
+    <p>A B2B battery technology and circular energy solutions company helping businesses recover, rebuild and redeploy battery assets.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT THE COMPANY
+     ============================================================ -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-media">
+      <img src="about%20image.png" alt="About Lithiumworkx — facility and team">
+    </div>
+    <div class="about-copy">
+      <span class="kicker">About the company</span>
+      <h2>A B2B partner for circular battery technology</h2>
+      <p>Lithiumworkx is a B2B battery technology and circular energy solutions company focused on helping businesses recover, evaluate, rebuild and redeploy battery assets for practical energy applications.</p>
+      <p>We work with battery manufacturers, EV companies, solar businesses, battery assemblers and industrial organizations to develop refurbished battery packs, second-life energy systems, custom industrial battery solutions and BESS applications.</p>
+      <p>Through testing, grading, refurbishment and repurposing, Lithiumworkx aims to extend battery life, recover usable energy capacity and build a more efficient circular battery ecosystem for businesses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MISSION & VISION
+     ============================================================ -->
+<section class="section mv-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">What drives us</span>
+      <h2>Our mission and vision</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card mission">
+        <div class="mv-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To help businesses across the EV, solar and industrial sectors recover maximum value from every battery — through rigorous testing, grading and refurbishment that extends usable life and reduces waste.</p>
+      </div>
+      <div class="mv-card vision">
+        <div class="mv-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To build a dependable, pan-India circular battery ecosystem where every recovered cell finds a practical second life — powering industries more sustainably and affordably.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUSTED PARTNERS
+     ============================================================ -->
+<section class="section partners-section" style="padding-block:88px;">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">Who we work with</span>
+      <h2>Our trusted partners</h2>
+      <p>We collaborate with established recycling and battery-materials companies across India to build a stronger circular ecosystem.</p>
+    </div>
+  </div>
+  <div class="partners-track" aria-hidden="true">
+    <div class="marquee-track dir-left">
+      <div class="marquee-group">
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).png" alt="Trusted partner logo 1"></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpg" alt="Trusted partner logo 2"></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).webp" alt="Trusted partner logo 3"></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpeg" alt="Trusted partner logo 4"></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(2).png" alt="Trusted partner logo 5"></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(2).jpg" alt="Trusted partner logo 6"></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(3).jpg" alt="Trusted partner logo 7"></span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).png" alt=""></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpg" alt=""></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).webp" alt=""></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpeg" alt=""></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(2).png" alt=""></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(2).jpg" alt=""></span>
+        <span class="partner-card"><img src="trusted%20partners/logo%20(3).jpg" alt=""></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">Testimonials</span>
+      <h2>What our clients say</h2>
+      <p>Trusted by battery manufacturers, EV companies and industrial businesses across India.</p>
+    </div>
+  </div>
+
+  <div class="testimonial-track" id="testimonialTrack">
+    <!-- Set 1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"Lithiumworkx helped us recover over 70% usable capacity from retired EV packs we'd written off. Their testing and grading process is thorough and transparent — we now have a reliable second-life supply chain."</p>
+      <p class="testimonial-author">Rajesh Mehta</p>
+      <p class="testimonial-role">Operations Head, GreenDrive EV Solutions</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"We needed custom battery packs for our solar micro-grid project on a tight timeline. Lithiumworkx delivered tested, graded modules that met our specs exactly. Great communication throughout."</p>
+      <p class="testimonial-author">Priya Sharma</p>
+      <p class="testimonial-role">Founder, SolarBridge Energy Systems</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"As a battery assembler, sourcing quality second-life cells was always a gamble. Lithiumworkx's segregation and grading process gives us confidence in every batch. They've become our primary supplier."</p>
+      <p class="testimonial-author">Amit Verma</p>
+      <p class="testimonial-role">Director, VoltPack Industries</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"We evaluated three refurbishment partners before choosing Lithiumworkx. Their cell-level testing data was the most detailed we'd seen — IR, capacity, cycle count — everything documented. Highly professional."</p>
+      <p class="testimonial-author">Sunil Kapoor</p>
+      <p class="testimonial-role">CTO, PowerGrid Industrial Solutions</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"Lithiumworkx built a 50 kWh BESS unit for our warehouse using repurposed LFP cells. Six months in, performance has been rock-solid. The cost savings compared to new cells were significant."</p>
+      <p class="testimonial-author">Deepak Nair</p>
+      <p class="testimonial-role">Facilities Manager, Apex Warehousing Pvt Ltd</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"What sets Lithiumworkx apart is their sourcing network. They consistently deliver large volumes of quality cells when other suppliers can't. Our production line hasn't had a single sourcing delay since we switched."</p>
+      <p class="testimonial-author">Kavitha Rajan</p>
+      <p class="testimonial-role">Procurement Lead, EcoBatt Manufacturing</p>
+    </div>
+
+    <!-- Duplicate set for seamless infinite loop -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"Lithiumworkx helped us recover over 70% usable capacity from retired EV packs we'd written off. Their testing and grading process is thorough and transparent — we now have a reliable second-life supply chain."</p>
+      <p class="testimonial-author">Rajesh Mehta</p>
+      <p class="testimonial-role">Operations Head, GreenDrive EV Solutions</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"We needed custom battery packs for our solar micro-grid project on a tight timeline. Lithiumworkx delivered tested, graded modules that met our specs exactly. Great communication throughout."</p>
+      <p class="testimonial-author">Priya Sharma</p>
+      <p class="testimonial-role">Founder, SolarBridge Energy Systems</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"As a battery assembler, sourcing quality second-life cells was always a gamble. Lithiumworkx's segregation and grading process gives us confidence in every batch. They've become our primary supplier."</p>
+      <p class="testimonial-author">Amit Verma</p>
+      <p class="testimonial-role">Director, VoltPack Industries</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"We evaluated three refurbishment partners before choosing Lithiumworkx. Their cell-level testing data was the most detailed we'd seen — IR, capacity, cycle count — everything documented. Highly professional."</p>
+      <p class="testimonial-author">Sunil Kapoor</p>
+      <p class="testimonial-role">CTO, PowerGrid Industrial Solutions</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"Lithiumworkx built a 50 kWh BESS unit for our warehouse using repurposed LFP cells. Six months in, performance has been rock-solid. The cost savings compared to new cells were significant."</p>
+      <p class="testimonial-author">Deepak Nair</p>
+      <p class="testimonial-role">Facilities Manager, Apex Warehousing Pvt Ltd</p>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <p class="testimonial-quote">"What sets Lithiumworkx apart is their sourcing network. They consistently deliver large volumes of quality cells when other suppliers can't. Our production line hasn't had a single sourcing delay since we switched."</p>
+      <p class="testimonial-author">Kavitha Rajan</p>
+      <p class="testimonial-role">Procurement Lead, EcoBatt Manufacturing</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" aria-label="Lithiumworkx home">
+        <img src="logo.png" alt="Lithiumworkx" style="height:36px; width:auto;">
+      </a>
+      <p>A B2B battery technology and circular energy solutions company, helping businesses recover, rebuild and redeploy battery assets.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Lithiumworkx on LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 10.5V17M7.5 7.5v.01M11.5 17v-4c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" aria-label="Lithiumworkx on Twitter / X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" aria-label="Lithiumworkx on Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html#system">Our System</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#applications">Applications</a></li>
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Our solutions</h4>
+      <ul>
+        <li><a href="index.html#solutions">Refurbished Battery Packs</a></li>
+        <li><a href="index.html#solutions">Second-Life Battery Systems</a></li>
+        <li><a href="index.html#solutions">Second-Life LFP Energy Storage</a></li>
+        <li><a href="index.html#solutions">BESS Solutions</a></li>
+        <li><a href="index.html#solutions">Custom Industrial Battery Systems</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <address>
+        D-44/1, Street No. 6,<br>
+        Bhagirathi Vihar,<br>
+        Delhi – 110094, India<br><br>
+        <a href="tel:+919310789140">+91 93107 89140</a><br>
+        <a href="mailto:info@lithiumworkx.com">info@lithiumworkx.com</a>
+      </address>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> Lithiumworkx. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Year */
+  var y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  /* Mobile drawer */
+  var drawer = document.getElementById('mobileDrawer');
+  function closeDrawer(){ drawer.classList.remove('is-open'); document.getElementById('navToggle').setAttribute('aria-expanded','false'); }
+  document.getElementById('navToggle').addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('is-open');
+    this.setAttribute('aria-expanded', isOpen ? 'true':'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeDrawer);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeDrawer();
+  });
+})();
+</script>
+
+</body>
+</html>

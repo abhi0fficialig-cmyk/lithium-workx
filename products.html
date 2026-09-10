@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lithiumworkx — Circular Battery Technology &amp; Energy Solutions</title>
-<meta name="description" content="Lithiumworkx is a B2B battery technology and circular energy solutions company helping businesses recover, evaluate, rebuild and redeploy battery assets.">
+<title>Products &amp; Solutions — Lithiumworkx</title>
+<meta name="description" content="Explore Lithiumworkx products &amp; solutions — ESS telecom & inverter batteries, 2-wheeler and 3-wheeler EV battery packs, custom-built lithium packs, and our full range of B2B energy storage solutions.">
 
 <!--
   ================================================================
@@ -370,6 +370,47 @@ p{ color:var(--ink-soft); }
     justify-content:center;
   }
 }
+
+/* ============================================================
+   2b. PAGE HERO (interior pages)
+   ============================================================ */
+.page-hero{
+  position:relative;
+  min-height:340px;
+  padding-block:calc(var(--header-h) + 56px) 64px;
+  background:var(--navy-deep);
+  color:var(--white);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.page-hero-bg{
+  position:absolute; inset:0;
+  background-size:cover;
+  background-position:center 30%;
+  opacity:0.22;
+}
+.page-hero-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,26,69,0.6) 0%, rgba(0,10,30,0.85) 100%);
+}
+.page-hero .container{ position:relative; z-index:1; }
+.page-hero h1{ color:var(--white); margin-bottom:16px; }
+.page-hero .kicker{ color:var(--gold); }
+.page-hero .kicker::before{ background:var(--white); }
+.page-hero p{
+  color:rgba(255,255,255,0.78);
+  font-size:1.1rem;
+  max-width:640px;
+  margin-inline:auto;
+  line-height:1.7;
+}
+@media (max-width:600px){
+  .page-hero{ min-height:260px; }
+}
+.main-nav a.is-current{ opacity:1; color:var(--gold); }
 
 /* ============================================================
    3. MARQUEE STRIPS
@@ -1452,14 +1493,14 @@ p{ color:var(--ink-soft); }
      ============================================================ -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="#hero" class="logo" aria-label="Lithiumworkx home">
+    <a href="index.html" class="logo" aria-label="Lithiumworkx home">
       <img src="logo.png" alt="Lithiumworkx">
     </a>
 
     <nav class="main-nav" aria-label="Primary">
-      <a href="index.html" class="is-current" aria-current="page">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="products.html">Products and Solutions</a>
+      <a href="products.html" class="is-current" aria-current="page">Products and Solutions</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -1476,9 +1517,9 @@ p{ color:var(--ink-soft); }
 </header>
 
 <div class="mobile-drawer" id="mobileDrawer">
-  <a href="index.html" class="is-current" aria-current="page">Home</a>
+  <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="products.html">Products and Solutions</a>
+  <a href="products.html" class="is-current" aria-current="page">Products and Solutions</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
 </div>
@@ -1486,268 +1527,15 @@ p{ color:var(--ink-soft); }
 <main id="main">
 
   <!-- ============================================================
-       HERO — 4-image slideshow with 4 text overlays
+       PAGE HERO
        ============================================================ -->
-  <section class="hero" id="hero">
-    <div class="hero-slides">
-      <div class="hero-slide is-active" style="background-image:url('hero%20image%20(1).png')"></div>
-      <div class="hero-slide" style="background-image:url('hero%20image%20(2).png')"></div>
-      <div class="hero-slide" style="background-image:url('hero%20image%20(3).png')"></div>
-      <div class="hero-slide" style="background-image:url('hero%20image%20(4).png')"></div>
-    </div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content-wrap">
-      <div class="hero-texts">
-        <div class="hero-text is-active" data-slide="0">
-          <h1>The Smart Battery Energy Storage partner for Commercial and industrial businesses</h1>
-        </div>
-        <div class="hero-text" data-slide="1">
-          <h1>Offering value-stacking solutions to meet diverse energy optimisation needs</h1>
-        </div>
-        <div class="hero-text" data-slide="2">
-          <h1>Powering Circular Battery Solutions for Sustainable Growth</h1>
-        </div>
-        <div class="hero-text" data-slide="3">
-          <h1>A second life for every battery through circular technology</h1>
-        </div>
-      </div>
-      <div class="hero-dots" role="tablist" aria-label="Hero slide selector">
-        <button class="hero-dot is-active" data-index="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
-        <button class="hero-dot" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-        <button class="hero-dot" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
-        <button class="hero-dot" data-index="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       MARQUEE STRIP 1
-       ============================================================ -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track dir-left">
-      <div class="marquee-group">
-        <span class="marquee-item"><span class="dot"></span>Refurbished Battery Packs</span>
-        <span class="marquee-item"><span class="dot"></span>Second-Life Energy Systems</span>
-        <span class="marquee-item"><span class="dot"></span>BESS Solutions</span>
-        <span class="marquee-item"><span class="dot"></span>Custom Industrial Systems</span>
-        <span class="marquee-item"><span class="dot"></span>Circular Battery Ecosystem</span>
-        <span class="marquee-item"><span class="dot"></span>Pan-India Recovery Network</span>
-      </div>
-      <div class="marquee-group">
-        <span class="marquee-item"><span class="dot"></span>Refurbished Battery Packs</span>
-        <span class="marquee-item"><span class="dot"></span>Second-Life Energy Systems</span>
-        <span class="marquee-item"><span class="dot"></span>BESS Solutions</span>
-        <span class="marquee-item"><span class="dot"></span>Custom Industrial Systems</span>
-        <span class="marquee-item"><span class="dot"></span>Circular Battery Ecosystem</span>
-        <span class="marquee-item"><span class="dot"></span>Pan-India Recovery Network</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       ABOUT US
-       ============================================================ -->
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <div class="about-media">
-        <img src="about%20image.png" alt="About Lithiumworkx — facility and team">
-      </div>
-      <div class="about-copy">
-        <span class="kicker">About the company</span>
-        <h2>A B2B partner for circular battery technology</h2>
-        <p>Lithiumworkx is a B2B battery technology and circular energy solutions company focused on helping businesses recover, evaluate, rebuild and redeploy battery assets for practical energy applications.</p>
-        <p>We work with battery manufacturers, EV companies, solar businesses, battery assemblers and industrial organizations to develop refurbished battery packs, second-life energy systems, custom industrial battery solutions and BESS applications.</p>
-        <p>Through testing, grading, refurbishment and repurposing, Lithiumworkx aims to extend battery life, recover usable energy capacity and build a more efficient circular battery ecosystem for businesses.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       MISSION & VISION
-       ============================================================ -->
-  <section class="section mv-section">
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('hero%20image%20(2).png');" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-head">
-        <span class="kicker">What drives us</span>
-        <h2>Our mission and vision</h2>
-      </div>
-      <div class="mv-grid">
-        <div class="mv-card mission">
-          <div class="mv-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Our Mission</h3>
-          <p>To help businesses across the EV, solar and industrial sectors recover maximum value from every battery — through rigorous testing, grading and refurbishment that extends usable life and reduces waste.</p>
-        </div>
-        <div class="mv-card vision">
-          <div class="mv-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
-          <h3>Our Vision</h3>
-          <p>To build a dependable, pan-India circular battery ecosystem where every recovered cell finds a practical second life — powering industries more sustainably and affordably.</p>
-        </div>
-      </div>
+      <span class="kicker">What we build</span>
+      <h1>Products &amp; Solutions</h1>
+      <p>Purpose-built lithium battery systems for telecom &amp; inverter backup, 2-wheeler and 3-wheeler EVs, and custom industrial applications — every pack engineered, tested and delivered ready for real-world B2B deployment.</p>
     </div>
-  </section>
-
-  <!-- ============================================================
-       TRUSTED PARTNERS
-       ============================================================ -->
-  <section class="section" style="padding-block:88px; background:#E6F7ED;">
-    <div class="container">
-      <div class="section-head center">
-        <span class="kicker">Who we work with</span>
-        <h2>Our trusted partners</h2>
-        <p>We collaborate with established recycling and battery-materials companies across India to build a stronger circular ecosystem.</p>
-      </div>
-    </div>
-    <div class="partners-track" aria-hidden="true" style="overflow:hidden;">
-      <div class="marquee-track dir-left">
-        <div class="marquee-group">
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).png" alt="Trusted partner logo 1"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpg" alt="Trusted partner logo 2"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).webp" alt="Trusted partner logo 3"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpeg" alt="Trusted partner logo 4"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(2).png" alt="Trusted partner logo 5"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(2).jpg" alt="Trusted partner logo 6"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(3).jpg" alt="Trusted partner logo 7"></span>
-        </div>
-        <div class="marquee-group" aria-hidden="true">
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).png" alt="" aria-hidden="true"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpg" alt="" aria-hidden="true"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).webp" alt="" aria-hidden="true"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(1).jpeg" alt="" aria-hidden="true"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(2).png" alt="" aria-hidden="true"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(2).jpg" alt="" aria-hidden="true"></span>
-          <span class="partner-card"><img src="trusted%20partners/logo%20(3).jpg" alt="" aria-hidden="true"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       OUR SYSTEM
-       ============================================================ -->
-  <section class="section system-section" id="system">
-    <div class="container" style="position:relative;">
-      <div class="section-head center" style="max-width:640px;">
-        <span class="kicker">How it works</span>
-        <h2>Our system</h2>
-        <p>Every battery that enters our ecosystem moves through the same structured system — designed to recover the maximum practical value from each asset.</p>
-      </div>
-
-      <div class="system-flow">
-        <div class="system-node">
-          <div class="system-node-num">01</div>
-          <h3>Recover</h3>
-          <p>We source and recover battery assets from manufacturers, EV fleets and industrial partners.</p>
-        </div>
-        <div class="system-node">
-          <div class="system-node-num">02</div>
-          <h3>Evaluate</h3>
-          <p>Each battery undergoes structured testing and grading to assess real-world performance.</p>
-        </div>
-        <div class="system-node">
-          <div class="system-node-num">03</div>
-          <h3>Rebuild</h3>
-          <p>Suitable cells are refurbished into dependable, application-ready battery packs.</p>
-        </div>
-        <div class="system-node">
-          <div class="system-node-num">04</div>
-          <h3>Redeploy</h3>
-          <p>Rebuilt systems return to service across EV, solar, backup and industrial applications.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       OUR PROCESS
-       ============================================================ -->
-  <section class="section" id="process">
-    <div class="container process-grid">
-      <div class="process-copy">
-        <span class="kicker">Inside the workshop</span>
-        <h2>Our process</h2>
-        <p class="lede">At Lithiumworkx, every battery goes through a structured process of Source, Inspect, Test, Grade, Refurbish/Repurpose and Deploy. We begin by identifying suitable battery assets, followed by physical inspection and technical screening. Each battery is then tested for key performance parameters such as capacity, voltage and internal resistance before being graded according to its actual condition and application suitability. Suitable batteries are refurbished into practical battery systems or repurposed for second-life energy applications, allowing recovered battery capacity to return to useful B2B applications.</p>
-      </div>
-      <div class="process-media">
-        <img src="process.png" alt="Lithiumworkx battery process — testing, grading and refurbishment inside the workshop">
-      </div>
-    </div>
-
-      <!-- ---------- Circular process journey ---------- -->
-      <div class="journey">
-        <div class="section-head center journey-head">
-          <span class="kicker">The circular loop</span>
-          <h2>From recovered pack to new pack</h2>
-          <p>Four steps close the loop — nothing usable leaves the cycle. Each stage feeds the next, turning retired batteries back into dependable energy.</p>
-        </div>
-
-        <div class="journey-viewport">
-        <ol class="journey-track">
-          <!-- STEP 1 — swap images by changing the src on the <img> inside .journey-media -->
-          <li class="journey-step">
-            <div class="journey-disc">
-              <span class="journey-ring" aria-hidden="true"></span>
-              <span class="journey-media">
-                <img src="process/step%201.jpeg" alt="Retired EV battery packs collected and staged for sourcing at the Lithiumworkx facility" loading="lazy" decoding="async">
-              </span>
-              <span class="journey-num">01</span>
-            </div>
-            <h3>Sourcing</h3>
-            <p>Retired packs and surplus cells are collected from EV fleets, manufacturers and industrial partners.</p>
-          </li>
-
-          <!-- STEP 2 -->
-          <li class="journey-step">
-            <div class="journey-disc">
-              <span class="journey-ring" aria-hidden="true"></span>
-              <span class="journey-media">
-                <img src="process/step%202.jpeg" alt="Battery pack dismantled by hand — cells removed from their module holder" loading="lazy" decoding="async">
-              </span>
-              <span class="journey-num">02</span>
-            </div>
-            <h3>Dismantling</h3>
-            <p>Packs are safely discharged and stripped down — modules, wiring, BMS and casing separated by hand.</p>
-          </li>
-
-          <!-- STEP 3 -->
-          <li class="journey-step">
-            <div class="journey-disc">
-              <span class="journey-ring" aria-hidden="true"></span>
-              <span class="journey-media">
-                <img src="process/step%203.jpeg" alt="Opened battery module showing cell strings ready for testing and segregation" loading="lazy" decoding="async">
-              </span>
-              <span class="journey-num">03</span>
-            </div>
-            <h3>Cell segregation</h3>
-            <p>Every cell is tested for capacity, voltage and internal resistance, then graded and matched into batches.</p>
-          </li>
-
-          <!-- STEP 4 -->
-          <li class="journey-step">
-            <div class="journey-disc">
-              <span class="journey-ring" aria-hidden="true"></span>
-              <span class="journey-media">
-                <img src="process/step%204.jpeg" alt="Graded lithium-ion cells matched and packed for rebuilding into new battery packs" loading="lazy" decoding="async">
-              </span>
-              <span class="journey-num">04</span>
-            </div>
-            <h3>Repurposing</h3>
-            <p>Matched cells are rebuilt into new, application-ready packs and redeployed into second-life service.</p>
-          </li>
-        </ol>
-        </div>
-
-        <div class="journey-dots" role="tablist" aria-label="Process step selector">
-          <button class="journey-dot is-active" type="button" role="tab" aria-selected="true" data-index="0" aria-label="Step 1 — Sourcing"></button>
-          <button class="journey-dot" type="button" role="tab" aria-selected="false" data-index="1" aria-label="Step 2 — Dismantling"></button>
-          <button class="journey-dot" type="button" role="tab" aria-selected="false" data-index="2" aria-label="Step 3 — Cell segregation"></button>
-          <button class="journey-dot" type="button" role="tab" aria-selected="false" data-index="3" aria-label="Step 4 — Repurposing"></button>
-        </div>
-      </div>
   </section>
 
   <!-- ============================================================
@@ -1958,108 +1746,6 @@ p{ color:var(--ink-soft); }
     </div>
   </section>
 
-  <!-- ============================================================
-       APPLICATIONS — two opposite-direction carousels
-       ============================================================ -->
-  <section class="section applications-section" id="applications">
-    <div class="container">
-      <div class="section-head center">
-        <span class="kicker">Where our systems work</span>
-        <h2>Applications</h2>
-        <p>From personal mobility to grid-scale storage, our refurbished and second-life battery systems power a wide range of real-world applications.</p>
-      </div>
-    </div>
-
-    <div class="app-row" aria-hidden="true">
-      <div class="app-track dir-left">
-        <div class="app-group">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="E-Rickshaws"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="E-Cycles"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="Solar Energy Storage"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="Backup Power"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="Industrial Equipment"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="Energy Storage"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="Microgrid Storage"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="BESS Applications"><div class="app-label">BESS Applications</div></div>
-        </div>
-        <div class="app-group" aria-hidden="true">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="" aria-hidden="true"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="" aria-hidden="true"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="" aria-hidden="true"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="" aria-hidden="true"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="" aria-hidden="true"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="" aria-hidden="true"><div class="app-label">BESS Applications</div></div>
-        </div>
-        <div class="app-group" aria-hidden="true">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="" aria-hidden="true"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="" aria-hidden="true"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="" aria-hidden="true"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="" aria-hidden="true"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="" aria-hidden="true"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="" aria-hidden="true"><div class="app-label">BESS Applications</div></div>
-        </div>
-        <div class="app-group" aria-hidden="true">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="" aria-hidden="true"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="" aria-hidden="true"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="" aria-hidden="true"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="" aria-hidden="true"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="" aria-hidden="true"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="" aria-hidden="true"><div class="app-label">BESS Applications</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="app-row" aria-hidden="true">
-      <div class="app-track dir-right">
-        <div class="app-group">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="E-Rickshaws"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="E-Cycles"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="Solar Energy Storage"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="Backup Power"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="Industrial Equipment"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="Energy Storage"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="Microgrid Storage"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="BESS Applications"><div class="app-label">BESS Applications</div></div>
-        </div>
-        <div class="app-group" aria-hidden="true">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="" aria-hidden="true"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="" aria-hidden="true"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="" aria-hidden="true"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="" aria-hidden="true"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="" aria-hidden="true"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="" aria-hidden="true"><div class="app-label">BESS Applications</div></div>
-        </div>
-        <div class="app-group" aria-hidden="true">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="" aria-hidden="true"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="" aria-hidden="true"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="" aria-hidden="true"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="" aria-hidden="true"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="" aria-hidden="true"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="" aria-hidden="true"><div class="app-label">BESS Applications</div></div>
-        </div>
-        <div class="app-group" aria-hidden="true">
-          <div class="app-card"><img src="applications/E-Rickshaws.png" alt="" aria-hidden="true"><div class="app-label">E-Rickshaws</div></div>
-          <div class="app-card"><img src="applications/E-Cycles.png" alt="" aria-hidden="true"><div class="app-label">E-Cycles</div></div>
-          <div class="app-card"><img src="applications/Solar%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Solar Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Backup%20Power.png" alt="" aria-hidden="true"><div class="app-label">Backup Power</div></div>
-          <div class="app-card"><img src="applications/Industrial%20Equipment.png" alt="" aria-hidden="true"><div class="app-label">Industrial Equipment</div></div>
-          <div class="app-card"><img src="applications/Energy%20Storage.png" alt="" aria-hidden="true"><div class="app-label">Energy Storage</div></div>
-          <div class="app-card"><img src="applications/Microgrids.png" alt="" aria-hidden="true"><div class="app-label">Microgrid Storage</div></div>
-          <div class="app-card"><img src="applications/BESS.png" alt="" aria-hidden="true"><div class="app-label">BESS Applications</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================================================
        OUR SOLUTIONS — product carousel
@@ -2127,92 +1813,6 @@ p{ color:var(--ink-soft); }
     </div>
   </section>
 
-  <!-- ============================================================
-       CONTACT US
-       ============================================================ -->
-  <section class="section contact-section" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <span class="kicker">Get in touch</span>
-        <h2>Contact us</h2>
-        <p>Have battery assets to evaluate, or need a custom energy storage system? Reach out — our team responds to every enquiry.</p>
-
-        <div class="contact-info-list">
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8.28 6.72 15 15 15l3-4-6-3-2 2c-2.5-1.2-4.8-3.5-6-6l2-2-3-6-4 0Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>Phone</h4>
-              <a href="tel:+919310789140">+91 93107 89140</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="m4 6.5 8 6.5 8-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:info@lithiumworkx.com">info@lithiumworkx.com</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
-            </div>
-            <div>
-              <h4>Address</h4>
-              <p>D-44/1, Street No. 6, Bhagirathi Vihar,<br>Delhi – 110094, India</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm">
-          <div id="formFields">
-            <div class="form-row">
-              <div class="field">
-                <label for="cf-name">Full name</label>
-                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
-              </div>
-              <div class="field">
-                <label for="cf-phone">Phone number</label>
-                <input type="tel" id="cf-phone" name="phone" placeholder="+91 00000 00000">
-              </div>
-            </div>
-            <div class="field">
-              <label for="cf-email">Email address</label>
-              <input type="email" id="cf-email" name="email" placeholder="you@company.com" required>
-            </div>
-            <div class="field">
-              <label for="cf-message">Message</label>
-              <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your requirement" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Send message <span class="arrow">→</span></button>
-          </div>
-
-          <div class="form-success" id="formSuccess">
-            <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="m8 12.5 2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <h3>Message sent</h3>
-            <p>Thanks for reaching out — our team will get back to you shortly.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       GOOGLE MAP — edge to edge, no rounded corners
-       ============================================================ -->
-  <section class="map-section" aria-label="Lithiumworkx location map">
-    <iframe
-      src="https://maps.google.com/maps?q=D-44%2F1%2C%20Street%20No.%206%2C%20Bhagirathi%20Vihar%2C%20Delhi%20%E2%80%93%20110094%2C%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Lithiumworkx location — D-44/1, Street No. 6, Bhagirathi Vihar, Delhi">
-    </iframe>
-  </section>
 
   <!-- ============================================================
        MARQUEE STRIP 2 — before footer
@@ -2244,7 +1844,7 @@ p{ color:var(--ink-soft); }
 <footer class="site-footer">
   <div class="container footer-top">
     <div class="footer-brand">
-      <a href="#hero" class="logo" aria-label="Lithiumworkx home">
+      <a href="index.html" class="logo" aria-label="Lithiumworkx home">
         <img src="logo.png" alt="Lithiumworkx" style="height:36px; width:auto;">
       </a>
       <p>A B2B battery technology and circular energy solutions company, helping businesses recover, rebuild and redeploy battery assets.</p>
@@ -2265,10 +1865,9 @@ p{ color:var(--ink-soft); }
       <h4>Quick links</h4>
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="#system">Our System</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#applications">Applications</a></li>
+        <li><a href="index.html#system">Our System</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#applications">Applications</a></li>
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
